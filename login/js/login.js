@@ -23,9 +23,9 @@ if (loginForm) {
     });
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    // Avisa o servidor que a página carregou e precisa de foco
+window.onload = function() {
     if (typeof cef !== 'undefined') {
-        cef.emit("page_loaded");
+        // Envia o evento "carregou" para o servidor
+        cef.emit("carregou");
     }
-});
+};
