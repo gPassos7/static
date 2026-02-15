@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login SA-MP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main class="auth-shell">
+        <section class="auth-card">
+            <p class="eyebrow">Servidor SA-MP</p>
+            <h1>Acesse sua conta</h1>
+            <p class="subtitle">Entre para continuar sua jornada no servidor.</p>
+
+            <div class="player-name" aria-live="polite">
+                <span>Nome do jogador</span>
+                <div class="name-box"><span id="name" class="name-value">[Aguardando nome do servidor]</span></div>
+            </div>
+
+            <form id="loginForm" class="auth-form" novalidate>
+                <input type="hidden" id="playerName" name="playerName" value="">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+
+            <p class="auth-switch">Ainda não tem conta? <a href="./register.html">Criar registro</a></p>
+        </section>
+    </main>
+    <script src="./js/login.js"></script>
+</body>
+</html>
