@@ -1,36 +1,73 @@
-﻿<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login SA-MP</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Conta</title>
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
+
 <body>
-    <main class="auth-shell">
-        <section class="auth-card">
-            <p class="eyebrow">Servidor SA-MP</p>
-            <h1>Acesse sua conta</h1>
-            <p class="subtitle">Entre para continuar sua jornada no servidor.</p>
+  <main class="card" role="main">
+    <header class="card__header">
+      <h1 class="title">Bem-vindo</h1>
+      <p class="subtitle">Entre ou crie sua conta</p>
+    </header>
 
-            <div class="player-name" aria-live="polite">
-                <span>Nome do jogador</span>
-                <div class="name-box"><span id="name" class="name-value">[Aguardando nome do servidor]</span></div>
-            </div>
+    <nav class="tabs" aria-label="Alternar entre login e registro">
+      <button class="tab is-active" type="button" data-tab="login">Login</button>
+      <button class="tab" type="button" data-tab="register">Registrar</button>
+    </nav>
 
-            <form id="loginForm" class="auth-form" novalidate>
-                <input type="hidden" id="playerName" name="playerName" value="">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-                <button type="submit">Entrar</button>
-            </form>
+    <!-- LOGIN -->
+    <section class="panel is-active" id="panel-login" data-panel="login">
+      <form id="loginForm" class="form" autocomplete="on">
+      <label class="field">
+        <span class="field__label">Usuário</span>
+        <div class="field__static" id="login-username-display">Carregando...</div>
+        <input type="hidden" name="username" id="login-username">
+      </label>
 
-            <p class="auth-switch">Ainda não tem conta? <a href="./register.html">Criar registro</a></p>
-        </section>
-    </main>
-    <script src="./js/login.js"></script>
+
+        <label class="field">
+          <span class="field__label">Senha</span>
+          <input class="field__input" type="password" name="password" id="login-password" required minlength="3" />
+        </label>
+
+        <button class="btn btn--primary" type="submit">Entrar</button>
+        <p class="hint" id="loginHint"></p>
+      </form>
+    </section>
+
+    <!-- REGISTRO -->
+    <section class="panel" id="panel-register" data-panel="register">
+      <form id="registerForm" class="form" autocomplete="on">
+        <label class="field">
+          <span class="field__label">Usuário</span>
+          <div class="field__static" id="login-username-display">Carregando...</div>
+          <input type="hidden" name="username" id="login-username">
+        </label>
+        <label class="field">
+          <span class="field__label">Email</span>
+          <input class="field__input" type="email" name="email" id="reg-email" required />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Senha</span>
+          <input class="field__input" type="password" name="password" id="reg-password" required minlength="3" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Confirmar senha</span>
+          <input class="field__input" type="password" name="passwordConfirm" id="reg-passwordConfirm" required minlength="3" />
+        </label>
+
+        <button class="btn btn--primary" type="submit">Criar conta</button>
+        <p class="hint" id="registerHint"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="./js/login.js"></script>
 </body>
 </html>
