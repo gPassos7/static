@@ -11,6 +11,7 @@ tabs.forEach(btn => {
 });
 
 const nomeForm =  document.getElementById("login-username-display")
+const nomeReg =  document.getElementById("reg-username-display")
 
 const loginForm = document.getElementById("loginForm");
 const registerForm = document.getElementById("registerForm");
@@ -57,4 +58,5 @@ registerForm.addEventListener("submit", (e) => {
 
 cef.on("UI:SetName", (nome) => {
     nomeForm.textContent = nome;
+    nomeReg.textContent = nome;
 })
