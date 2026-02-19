@@ -32,12 +32,12 @@ function sendLogin(){
 function sendRegister(){
   return Object.fromEntries(new FormData(registerForm));
 }
-1
+
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const data = sendLogin();
 
-  const senha =  data.get("password")
+  const senha =  data.password;
 
   hint(loginHint, "Enviando login...", null);
   cef.emit("Player:login", senha)
@@ -53,7 +53,7 @@ registerForm.addEventListener("submit", (e) => {
     return;
   }
   else {
-    const senha = data.get("password")
+    const senha = data.password;
     hint(registerHint, "Enviando registro...", null);
     cef.emit("Player:register", senha)
   }
