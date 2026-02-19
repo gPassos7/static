@@ -52,7 +52,7 @@ registerForm.addEventListener("submit", (e) => {
     hint(registerHint, "As senhas não batem.", "is-error");
     return;
   }
-  else {
+  else if(data.password == data.passwordConfirm){
     const senha = data.get("password")
     hint(registerHint, "Enviando registro...", null);
     cef.emit("Player:register", senha)
