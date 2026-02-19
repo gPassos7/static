@@ -33,6 +33,7 @@ function sendRegister(){
   return Object.fromEntries(new FormData(registerForm));
 }
 
+
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const data = sendLogin();
