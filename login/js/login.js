@@ -32,7 +32,7 @@ function sendLogin(){
 function sendRegister(){
   return Object.fromEntries(new FormData(registerForm));
 }
-1
+
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const data = sendLogin();
