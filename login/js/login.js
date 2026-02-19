@@ -37,8 +37,10 @@ loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const data = sendLogin();
 
-  hint(loginHint, "Enviando login...", null);
+  const senha =  data.get("password")
 
+  hint(loginHint, "Enviando login...", null);
+  cef.emit("Player:login", senha)
   console.log("LOGIN:", data);
 });
 
@@ -50,8 +52,11 @@ registerForm.addEventListener("submit", (e) => {
     hint(registerHint, "As senhas não batem.", "is-error");
     return;
   }
-
-  hint(registerHint, "Enviando registro...", null);
+  else {
+    const senha = data.get("password")
+    hint(registerHint, "Enviando registro...", null);
+    cef.emit("Player:register", senha)
+  }
 
   console.log("REGISTER:", data);
 });
