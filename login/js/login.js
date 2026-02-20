@@ -40,7 +40,7 @@ loginForm.addEventListener("submit", (e) => {
   const senha =  data.password
 
   hint(loginHint, "Enviando login...", null);
-  cef.emit("Player:login", senha)
+  cef.emit("Player:login", senha);
   console.log("LOGIN:", data);
 });
 
